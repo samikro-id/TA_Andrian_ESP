@@ -43,7 +43,7 @@ typedef struct{
 
 #define CHART_DELAY     300000      // 300000 = 5 menit
 
-#define MQTT_ID         "acff544b-c4e5-4de7-a0b4-092e155518db"
+#define MQTT_ID         "ddfdf6cd-f3eb-4936-a8cb-440ff3518b99"
 
 #define MQTT_BROKER     "broker.emqx.io"            //
 #define MQTT_PORT       1883                        //
@@ -57,7 +57,7 @@ typedef struct{
 #define MQTT2_PORT      1883                       //
 #define MQTT2_USERNAME  "mwa0000023509738"         // Change to your Username from thingspeak
 #define MQTT2_PASSWORD  "GWHQ75HUKGBKYXDI"         // Change to your User API Key from thingspeak
-#define MQTT2_TIMEOUT   2
+#define MQTT2_TIMEOUT   10
 #define MQTT2_QOS       0
 #define MQTT2_RETAIN    false
 #define PUBLISH_SUBTOPIC  "NLA5486CXZ5GGICQ"       // Change to your Write API Key from thingspeak
@@ -250,7 +250,7 @@ bool waitSerialChart(){
     clearDataSerial();
     sprintf(text,"field1=%.1f&field2=%.1f&field3=%.2f&field4=%.2f&field5=%.1f&field6=%.2f&field7=%.1f", 
             field1, field2, field3, field4, field5, field6, field7);
-            
+
     char topic[50];
     memset(&topic, 0, 50);
     sprintf(topic,"channels/%d/publish/%s", CHANNEL_ID, PUBLISH_SUBTOPIC);
