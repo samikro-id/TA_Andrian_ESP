@@ -1,0 +1,51 @@
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "Arduino",
+            "compilerPath": "C:\\Users\\SYAFIUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\tools\\xtensa-lx106-elf-gcc\\2.5.0-4-b40a506\\bin\\xtensa-lx106-elf-g++",
+            "compilerArgs": [
+                "-U__STRICT_ANSI__",
+                "-w",
+                "-mlongcalls",
+                "-mtext-section-literals",
+                "-fno-rtti",
+                "-falign-functions=4",
+                "-std=gnu++11"
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "includePath": [
+                "C:\\Users\\SYAFIUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.1\\tools\\sdk\\include",
+                "C:\\Users\\SYAFIUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.1\\tools\\sdk\\lwip2\\include",
+                "C:\\Users\\SYAFIUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.1\\tools\\sdk\\libc\\xtensa-lx106-elf\\include",
+                "C:\\Users\\SYAFIUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.1\\cores\\esp8266",
+                "C:\\Users\\SYAFIUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.1\\variants\\generic",
+                "C:\\Users\\SYAFIUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.1\\libraries\\ESP8266WiFi\\src",
+                "C:\\Users\\SYAFIUL\\Documents\\Arduino\\libraries\\PubSubClient\\src"
+            ],
+            "forcedInclude": [
+                "C:\\Users\\SYAFIUL\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\2.7.1\\cores\\esp8266\\Arduino.h"
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "defines": [
+                "__ets__",
+                "ICACHE_FLASH",
+                "NONOSDK22x_190703=1",
+                "F_CPU=80000000L",
+                "LWIP_OPEN_SRC",
+                "TCP_MSS=536",
+                "LWIP_FEATURES=1",
+                "LWIP_IPV6=0",
+                "ARDUINO=10813",
+                "ARDUINO_ESP8266_GENERIC",
+                "ARDUINO_ARCH_ESP8266",
+                "ARDUINO_BOARD=\"ESP8266_GENERIC\"",
+                "LED_BUILTIN=2",
+                "FLASHMODE_DOUT",
+                "ESP8266",
+                "USBCON"
+            ]
+        }
+    ]
+}

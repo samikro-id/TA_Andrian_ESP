@@ -18,8 +18,8 @@ bool mqtt = false;
 #define SERIAL_LEN   1000
 char text[SERIAL_LEN];
 
-char ssid[] = "samikro";
-char pass[] = "samikroid";
+char ssid[] = "Paijo";
+char pass[] = "isisembarang";
 
 typedef struct{
     float voltage = 0.0;
