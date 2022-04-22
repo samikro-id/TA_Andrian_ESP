@@ -18,8 +18,8 @@ bool mqtt = false;
 #define SERIAL_LEN   1000
 char text[SERIAL_LEN];
 
-char ssid[] = "Paijo";
-char pass[] = "isisembarang";
+char ssid[] = "KYM";
+char pass[] = "1234567890";
 
 typedef struct{
     float voltage = 0.0;
@@ -153,6 +153,8 @@ void publishChart(){
   bool chartIsConnected = false;
   uint8_t n = 0;
 
+  Serial.println("chart");
+  
   client.disconnect();
   client.setServer(MQTT2_BROKER, MQTT2_PORT);
 
@@ -173,6 +175,8 @@ void publishChart(){
       }
     }
   }
+
+  Serial.println("End");
 
   connectMqtt();
 }
@@ -259,6 +263,10 @@ bool waitSerialChart(){
     clearDataSerial();
     return true;
   }
+  else{
+    Serial.println("No Data");
+  }
+  
   return false;
 }
 
