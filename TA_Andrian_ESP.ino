@@ -1,5 +1,6 @@
 #include <ESP8266WiFi.h>                  // Install esp8266 by ESP8266 Community version 2.6.3
 #include <PubSubClient.h>                 // Install Library by Nick O'Leary version 2.7.0
+#include "mqtt_secrets.h"
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -53,14 +54,11 @@ typedef struct{
 #define MQTT_QOS        0
 #define MQTT_RETAIN     false
 
-#define MQTT2_BROKER    "mqtt.thingspeak.com"      //
-#define MQTT2_PORT      1883                       //
-#define MQTT2_USERNAME  "mwa0000023509738"         // Change to your Username from thingspeak
-#define MQTT2_PASSWORD  "GWHQ75HUKGBKYXDI"         // Change to your User API Key from thingspeak
+#define MQTT2_BROKER    "mqtt3.thingspeak.com"      
+#define MQTT2_PORT      1883                       
 #define MQTT2_TIMEOUT   10
 #define MQTT2_QOS       0
 #define MQTT2_RETAIN    false
-#define PUBLISH_SUBTOPIC  "NLA5486CXZ5GGICQ"       // Change to your Write API Key from thingspeak
 #define CHANNEL_ID      1476079
 
 void callback(char* topic, byte* payload, unsigned int length) { //A new message has been received
@@ -160,7 +158,7 @@ void publishChart(){
 
   for(n=0; n<MQTT2_TIMEOUT; n++){
 
-    if(client.connect(MQTT_ID, MQTT2_USERNAME, MQTT2_PASSWORD)){
+    if(client.connect(SECRET_MQTT_CLIENT_ID, SECRET_MQTT_USERNAME, SECRET_MQTT_PASSWORD)){
       chartIsConnected = true;
 
       break;
@@ -252,12 +250,12 @@ bool waitSerialChart(){
     }
 
     clearDataSerial();
-    sprintf(text,"field1=%.1f&field2=%.1f&field3=%.2f&field4=%.2f&field5=%.1f&field6=%.2f&field7=%.1f", 
+    sprintf(text,"field1=%.1f&field2=%.1f&field3=%.2f&field4=%.2f&field5=%.1f&field6=%.2f&field7=%.1f&status=MQTTPUBLISH", 
             field1, field2, field3, field4, field5, field6, field7);
 
     char topic[50];
     memset(&topic, 0, 50);
-    sprintf(topic,"channels/%d/publish/%s", CHANNEL_ID, PUBLISH_SUBTOPIC);
+    sprintf(topic,"channels/%d/publish", CHANNEL_ID);
     client.publish(topic,text,false);
 
     clearDataSerial();
